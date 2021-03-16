@@ -148,6 +148,10 @@ function App() {
 
     if (stream.genre === genreAnswer.value) {
       totalScore += 1;
+
+      if (genreAnswer.value === "Kids") {
+        totalScore += 1;
+      }
     }
 
     if (stream.quality === qualityAnswer.value) {
