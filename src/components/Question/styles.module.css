@@ -1,0 +1,11 @@
+.questionContainer {
+  padding: 10px 20px 30px 20px;
+  background-color: #404456;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.questionTitle {
+  color: #fdc786;
+  font-weight: 700;
+}
