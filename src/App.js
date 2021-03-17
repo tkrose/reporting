@@ -40,7 +40,7 @@ function App() {
   };
 
   const qualityQuestion = {
-    title: "How important is the quallity of the resolution for you?",
+    title: "How important is the quality of the resolution for you?",
     options: [
       { label: "Not Important", value: "Not Important" },
       { label: "Important", value: "Important" },
@@ -118,7 +118,12 @@ function App() {
       "HDR/4K": "Yes",
       "Max Number of Screens": "4",
       "Base Price": "$8.99/mo",
-      "Offline Download": "Yes"
+      "Offline Download": "Yes",
+      "Watch Party": "No",
+      "Ads": "No",
+      "Strengths": "Brand reputation, original content, DVD rentals, variety of subscription options",
+      "Weaknesses": "Limited copyrights, increasing debt, primarily NA market",
+      "2020 Emmy Nominations": "160"
     },
     {
       Name: "Amazon",
@@ -127,7 +132,12 @@ function App() {
       "HDR/4K": "Yes",
       "Max Number of Screens": "2",
       "Base Price": "$8.99/mo",
-      "Offline Download": "Yes"
+      "Offline Download": "Yes",
+      "Watch Party": "Yes",
+      "Ads": "No",
+      "Strengths": "Original content, live sports/news, access to Prime Day discounts",
+      "Weaknesses": "Not much high-quality content, little third-party content, bad UI/UX",
+      "2020 Emmy Nominations": "47"
     },
     {
       Name: "Disney",
@@ -136,7 +146,12 @@ function App() {
       "HDR/4K": "Yes",
       "Max Number of Screens": "4",
       "Base Price": "$8.00/mo",
-      "Offline Download": "No"
+      "Offline Download": "No",
+      "Watch Party": "Yes",
+      "Ads": "No",
+      "Strengths": "Brand reputation, high quality service, in-depth search, bundled plan with other streaming services",
+      "Weaknesses": "Limited to Disney exclusives, parental efforts to limit technology use, strong competitors",
+      "2020 Emmy Nominations": "145"
     },
     {
       Name: "Peacock",
@@ -145,7 +160,12 @@ function App() {
       "HDR/4K": "No",
       "Max Number of Screens": "Unlimited",
       "Base Price": "$5.00/mo",
-      "Offline Download": "No"
+      "Offline Download": "Yes",
+      "Watch Party": "No",
+      "Ads": "Yes",
+      "Strengths": "Many pricing tiers, free tier with few limitations, live sports",
+      "Weaknesses": "Not much original content and smaller movie selection",
+      "2020 Emmy Nominations": "0"
     }
   ];
 
@@ -209,7 +229,7 @@ function App() {
     <div className="App">
       <h1 className={"title"}>Best Streaming Service For You</h1>
       <p className={"description"}>
-        Tell us your prefrences and we'll find a streaming service that meets
+        Tell us your preferences and we'll find a streaming service that meets
         your needs.
       </p>
       {stream ? (
@@ -257,10 +277,15 @@ function App() {
             <CompareChart
               data={data}
               features={[
+                "Strengths",
+                "Weaknesses",
                 "HDR/4K",
                 "Max Number of Screens",
                 "Base Price",
-                "Offline Download"
+                "Offline Download",
+                "Watch Party",
+                "Ads",
+                "2020 Emmy Nominations"
               ]}
               hideItemOption={true}
             />

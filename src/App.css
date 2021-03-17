@@ -76,7 +76,8 @@ body {
 }
 
 .chart {
+  display: flex;
+  margin-top: 25px;
   color: white;
-  margin: 0 auto;
   align-self: center;
 }
