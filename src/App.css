@@ -58,3 +58,25 @@ body {
   font-size: 25px;
   transition: all 0.6s ease-in-out;
 }
+
+.return-container {
+  display: flex;
+  width: 150px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #7e8ce0;
+  border-radius: 15px;
+  justify-self: self-end;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  color: white;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.chart {
+  color: white;
+  margin: 0 auto;
+  align-self: center;
+}

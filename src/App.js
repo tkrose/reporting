@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import CompareChart from "react-comparison-table";
 import { Question, Stream } from "./components";
 
 function App() {
@@ -109,6 +110,45 @@ function App() {
     logo: "https://www.soda.com/wp-content/uploads/2019/12/prime-video.jpg"
   };
 
+  const data = [
+    {
+      Name: "Netflix",
+      id: "1",
+      image: Netflix.logo,
+      "HDR/4K": "Yes",
+      "Max Number of Screens": "4",
+      "Base Price": "$8.99/mo",
+      "Offline Download": "Yes"
+    },
+    {
+      Name: "Amazon",
+      id: "2",
+      image: Amazon.logo,
+      "HDR/4K": "Yes",
+      "Max Number of Screens": "2",
+      "Base Price": "$8.99/mo",
+      "Offline Download": "Yes"
+    },
+    {
+      Name: "Disney",
+      id: "3",
+      image: Disney.logo,
+      "HDR/4K": "Yes",
+      "Max Number of Screens": "4",
+      "Base Price": "$8.00/mo",
+      "Offline Download": "No"
+    },
+    {
+      Name: "Peacock",
+      id: "4",
+      image: Peacock.logo,
+      "HDR/4K": "No",
+      "Max Number of Screens": "Unlimited",
+      "Base Price": "$5.00/mo",
+      "Offline Download": "No"
+    }
+  ];
+
   const submit = () => {
     if (screenAnswer && genreAnswer && qualityAnswer && offlineAnswer) {
       getTotalScore(Netflix);
@@ -173,7 +213,18 @@ function App() {
         your needs.
       </p>
       {stream ? (
-        <Stream stream={stream} />
+        <div>
+          <Stream stream={stream} />
+          <div
+            className="return-container"
+            onClick={() => {
+              setStream(null);
+            }}
+          >
+            <BsArrowLeft />
+            <p>Return</p>
+          </div>
+        </div>
       ) : (
         <div className="questions-container">
           <Question
@@ -201,6 +252,18 @@ function App() {
               <p>Submit</p>
               <BsArrowRight className="arrow" />
             </div>
+          </div>
+          <div className="chart">
+            <CompareChart
+              data={data}
+              features={[
+                "HDR/4K",
+                "Max Number of Screens",
+                "Base Price",
+                "Offline Download"
+              ]}
+              hideItemOption={true}
+            />
           </div>
         </div>
       )}
